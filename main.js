@@ -401,30 +401,30 @@ function addOwnedItem(itemId) {
   }
 }
 
-function getOwnedItems() {
-  return state.ownedItemIds.map((id) => itemMap.get(id)).filter(Boolean);
+function getOwnedItems(currentState = state) {
+  return currentState.ownedItemIds.map((id) => itemMap.get(id)).filter(Boolean);
 }
 
-function getMoneyBonus() {
-  return getOwnedItems()
+function getMoneyBonus(currentState = state) {
+  return getOwnedItems(currentState)
     .filter((item) => item.effectType === "money_bonus_flat")
     .reduce((sum, item) => sum + item.effectValue, 0);
 }
 
-function getRareBonus() {
-  return getOwnedItems()
+function getRareBonus(currentState = state) {
+  return getOwnedItems(currentState)
     .filter((item) => item.effectType === "rare_bonus_flat")
     .reduce((sum, item) => sum + item.effectValue, 0);
 }
 
-function getDiscountBonus() {
-  return getOwnedItems()
+function getDiscountBonus(currentState = state) {
+  return getOwnedItems(currentState)
     .filter((item) => item.effectType === "shop_discount_flat")
     .reduce((sum, item) => sum + item.effectValue, 0);
 }
 
-function getShopRefreshBonus() {
-  return getOwnedItems()
+function getShopRefreshBonus(currentState = state) {
+  return getOwnedItems(currentState)
     .filter((item) => item.effectType === "shop_refresh_bonus")
     .reduce((sum, item) => sum + item.effectValue, 0);
 }
@@ -468,7 +468,7 @@ function rollShopItems(currentState, count) {
   });
 
   const results = [];
-  const refreshBonus = getShopRefreshBonus();
+  const refreshBonus = getShopRefreshBonus(currentState);
   const temp = [...candidates];
 
   while (results.length < count && temp.length > 0) {
