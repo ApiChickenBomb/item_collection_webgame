@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>アイテム蒐集ゲーム</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <div class="tabs">
+      <button class="tab-button" data-tab="book">図鑑</button>
+      <button class="tab-button active" data-tab="explore">探索</button>
+      <button class="tab-button" data-tab="shop">購入</button>
+    </div>
+
+    <section class="screen" id="screen-book">
+      <div class="screen-title">図鑑</div>
+      <div class="status-bar">
+        <div class="status-item" id="book-money">所持金：0</div>
+        <div class="status-item" id="book-count">発見アイテム：0 / 0</div>
+      </div>
+      <div class="content two-column">
+        <div class="list-panel">
+          <ul class="item-list" id="book-list"></ul>
+        </div>
+        <div class="detail-panel">
+          <div class="detail-row">
+            <div class="detail-label">アイテム名</div>
+            <div class="detail-value" id="book-name">未選択</div>
+          </div>
+          <div class="detail-row">
+            <div class="detail-label">効果</div>
+            <div class="detail-value" id="book-effect">-</div>
+          </div>
+          <div class="detail-row">
+            <div class="detail-label">フレーバーテキスト</div>
+            <div class="detail-value" id="book-description">図鑑の左側からアイテムを選択してください。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen active" id="screen-explore">
+      <div class="screen-title">探索</div>
+      <div class="status-bar">
+        <div class="status-item" id="explore-money">所持金：0</div>
+        <div class="status-item" id="explore-count">発見アイテム：0 / 0</div>
+      </div>
+      <div class="content explore-layout">
+        <div class="result-panel">
+          <div class="detail-row">
+            <div class="detail-label">結果テキスト</div>
+            <div class="detail-value" id="explore-message">探索に出ると結果がここに表示されます。</div>
+          </div>
+          <div class="detail-row">
+            <div class="detail-label">取得アイテム名</div>
+            <div class="detail-value" id="explore-item-name">-</div>
+          </div>
+          <div class="detail-row">
+            <div class="detail-label">取得アイテム効果</div>
+            <div class="detail-value" id="explore-item-effect">-</div>
+          </div>
+          <div class="detail-row">
+            <div class="detail-label">取得アイテムフレーバーテキスト</div>
+            <div class="detail-value" id="explore-item-description">-</div>
+          </div>
+        </div>
+        <div class="explore-button-wrap">
+          <button class="big-button" id="explore-button">探索に出る</button>
+          <div class="message" id="explore-sub-message"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" id="screen-shop">
+      <div class="screen-title">購入</div>
+      <div class="status-bar">
+        <div class="status-item" id="shop-money">所持金：0</div>
+        <div class="status-item" id="shop-count">発見アイテム：0 / 0</div>
+      </div>
+      <div class="content two-column">
+        <div class="list-panel">
+          <ul class="item-list" id="shop-list"></ul>
+        </div>
+        <div class="action-panel">
+          <div class="detail-row">
+            <div class="detail-label">アイテム名</div>
+            <div class="detail-value" id="shop-name">未選択</div>
+          </div>
+          <div class="detail-row">
+            <div class="detail-label">効果</div>
+            <div class="detail-value" id="shop-effect">-</div>
+          </div>
+          <div class="detail-row">
+            <div class="detail-label">値段</div>
+            <div class="detail-value" id="shop-price">-</div>
+          </div>
+          <div class="detail-row action-row">
+            <button class="big-button action-button" id="buy-button">購入する</button>
+            <div class="message" id="shop-message"></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-tools">
+        <button class="small-button danger" id="reset-button">データを初期化する</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

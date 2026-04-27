@@ -1,0 +1,34 @@
+[
+  {
+    "id": "money_small",
+    "type": "money",
+    "weight": 45,
+    "minValue": 10,
+    "maxValue": 25,
+    "message": "小銭を拾った。"
+  },
+  {
+    "id": "money_medium",
+    "type": "money",
+    "weight": 25,
+    "minValue": 20,
+    "maxValue": 45,
+    "message": "使い込まれた財布からいくらか回収できた。"
+  },
+  {
+    "id": "item_common",
+    "type": "item",
+    "weight": 20,
+    "minValue": 0,
+    "maxValue": 0,
+    "message": "何か品物を見つけた。"
+  },
+  {
+    "id": "item_rare",
+    "type": "item",
+    "weight": 10,
+    "minValue": 0,
+    "maxValue": 0,
+    "message": "埃の下から、妙に価値のありそうな品が現れた。"
+  }
+]
